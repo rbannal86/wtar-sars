@@ -39,7 +39,7 @@ export const questionsStore = defineStore('questions', {
     },
     async fetchNames() {
       const pageNumber = Math.floor(Math.random() * 66)
-      const response = await axios.get(`http://stapi.co/api/v1/rest/character/search?pageSize=100&pageNumber=${pageNumber}`)
+      const response = await axios.get(`//stapi.co/api/v1/rest/character/search?pageSize=100&pageNumber=${pageNumber}`)
       this.names = response.data.characters.map(c => c.name);
     },
     async fetchImageSrcs() {
