@@ -20,3 +20,9 @@ onMounted(async () => {
   loaded.value = true;
 });
 </script>
+
+<style scoped>
+.v-application {
+  background-color: darkgrey;
+}
+</style>

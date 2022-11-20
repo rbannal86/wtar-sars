@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import axios from 'axios';
+import { randMovieCharacter, randMovie } from '@ngneat/falso';
 
 export const questionsStore = defineStore('questions', {
   state: () => ({
@@ -37,10 +38,13 @@ export const questionsStore = defineStore('questions', {
       const srcIdx = Math.floor(Math.random() * this.imageSrcs.length);
       return this.imageSrcs[srcIdx];
     },
+    fetchRandomMovieCharacter() {
+      return randMovie();
+    },
     async fetchNames() {
-      const pageNumber = Math.floor(Math.random() * 66)
-      const response = await axios.get(`//stapi.co/api/v1/rest/character/search?pageSize=100&pageNumber=${pageNumber}`)
-      this.names = response.data.characters.map(c => c.name);
+      for (let i = 0; i <= 100; i++) {
+        this.names.push(randMovieCharacter());
+      }
     },
     async fetchImageSrcs() {
       const response = await axios.get('https://akabab.github.io/starwars-api/api/all.json');

@@ -3,7 +3,7 @@
     :imgSrc="imageSrc"
     toolbarTitle="WTAR SARS"
     cardTitle="Hello There"
-    cardSubtitle="Captain Picard"
+    :cardSubtitle="`Your favorite ${randomChar} characters!`"
     :revealSubCard="reveal"
     subcardEventName="toggleWhat"
     subcardButtonText="wizard"
@@ -41,6 +41,7 @@ import { questionsStore } from '../stores/questions';
 const store = questionsStore();
 
 const imageSrc = ref(store.fetchImageSrc());
+const randomChar = ref(store.fetchRandomMovieCharacter());
 
 const reveal = ref(false);
 const handleReveal = () => {
