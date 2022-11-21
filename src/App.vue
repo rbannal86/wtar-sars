@@ -25,7 +25,7 @@ onMounted(async () => {
 body {
   overflow: hidden;
 }
-.v-application {
+.v-main {
   background-color: darkgrey;
 }
 </style>
