@@ -21,7 +21,10 @@ onMounted(async () => {
 });
 </script>
 
-<style scoped>
+<style>
+body {
+  overflow: hidden;
+}
 .v-application {
   background-color: darkgrey;
 }
