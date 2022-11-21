@@ -11,6 +11,7 @@
     subcardText="It's a game. A matching game. May the Force live long and prosper."
     cardHeight="550"
     @toggleWhat="handleReveal"
+    @imageClick="handleImageClick"
   >
     <template #card-actions>
       <v-card-actions>
@@ -49,6 +50,12 @@ const handleReveal = () => {
 }
 
 const handleStartGame = () => router.push({ name: 'game' });
+
+const handleImageClick = () => {
+  const nextImageSrc = store.fetchImageSrc()
+  imageSrc.value = nextImageSrc
+}
+
 </script>
 
 <style scoped>

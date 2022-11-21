@@ -5,6 +5,7 @@
     cardTitle="Your Score:"
     :cardSubtitle="`You got ${store.currentScore} out of 10 correct!`"
     cardHeight="550"
+    @imageClick="handleImageClick"
   >
     <template #card-actions>
       <v-card-actions>
@@ -40,6 +41,11 @@ const navigate = (name) => {
   store.currentRound = 1;
   store.currentScore = 0;
   router.push({ name });
+}
+
+const handleImageClick = () => {
+  const nextImageSrc = store.fetchImageSrc()
+  imageSrc.value = nextImageSrc
 }
 
 </script>

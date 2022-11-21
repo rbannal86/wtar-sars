@@ -25,6 +25,11 @@
           {{ props.cardSubtitle }}
         </v-card-subtitle>
         <slot name="card-actions"></slot>
+        <v-card-text
+          class="pt-0 text-caption font-weight-thin"
+        >
+          Image not appearing? Try clicking on it!
+        </v-card-text>
         <v-expand-transition>
           <v-card
             class="transition-fast-in-fast-out v-card--reveal"
